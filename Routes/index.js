@@ -6,4 +6,14 @@ var router = express.Router()
 router.get('/', function (req, res, next) {
   res.render('index', {title : "Watson Demonstration"})
 })
+
+// pages/toneanalyser route 
+router.get('/pages/toneanalyser', function(req, res, next) {
+  res.render('ToneAnalyser', {})
+})
+
+router.get('/pages/watsondiscovery', function(req, res, next) {
+  res.render('WatsonDiscovery', {})
+})
+
 module.exports = router
