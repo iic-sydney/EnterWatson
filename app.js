@@ -6,6 +6,7 @@
 
 // This application uses express as its web server
 // for more info, see: http://expressjs.com
+var cons = require('consolidate')
 var express = require('express');
 var index = require('./Routes/index')
 
@@ -19,8 +20,10 @@ var app = express();
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
 
+app.engine("html", cons.swig)
 //Set the views folder
 app.set('views', __dirname + '/Pages')
+app.set("view engine", "html")
 
 //Index Router
 app.use('/', index);
